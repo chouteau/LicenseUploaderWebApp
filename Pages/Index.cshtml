@@ -1,0 +1,21 @@
+﻿@page
+@model IndexModel
+@{
+	ViewData["Title"] = "Envoi Licence";
+}
+<h2 class="text-center">Envoi du fichier licence</h2>
+
+<div class="dropzone m-4" id="uploadLicense"></div>
+
+<script type="module">
+	console.log(window.Dropzone);
+	window.Dropzone.options.uploadLicense = {
+		url: '/upload-license?handler=upload',
+		parallelUploads: 1,
+		maxFilesize: 5,
+		addRemoveLinks: true,
+		maxFiles: 1,
+		defaultHeaders:false,
+		dictDefaultMessage: 'Glissez/Déposez ici votre fichier licence ou cliquer pour le sélectionner',
+	};
+</script>
